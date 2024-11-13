@@ -1,7 +1,7 @@
 { lib, pkgs, neovimUtils, wrapNeovimUnstable, ... }:
 
 let
-  config = pkgs.neovimUtils.makeNeovimConfig {
+  config = neovimUtils.makeNeovimConfig {
     extraLuaPackages = p:
       with p; [
         # ... other lua packages
@@ -32,15 +32,16 @@ let
 in {
   nixpkgs.overlays = [
     (_: super: {
-      neovim-custom = pkgs.wrapNeovimUnstable
-        (super.neovim-unwrapped.overrideAttrs (oldAttrs: {
+      neovim-custom = wrapNeovimUnstable (super.neovim-unwrapped.overrideAttrs
+        (oldAttrs: {
           buildInputs = oldAttrs.buildInputs ++ [ super.tree-sitter ];
         })) config;
     })
   ];
 
   environment.systemPackages = with pkgs; [
-    neovim-custom
+    # neovim-custom
+    neovim
 
     # Can't install this with the rest of the python packages b/c this needs to be in path
     python3Packages.jupytext # if you want to use vim-jupytext or similar

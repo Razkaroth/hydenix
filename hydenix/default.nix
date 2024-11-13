@@ -1,10 +1,4 @@
-{
-  config,
-  userConfig,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, userConfig, lib, pkgs, ... }:
 
 with lib;
 
@@ -12,15 +6,10 @@ let
   cfg = config.hydenix;
   isNixOS = builtins.pathExists /etc/nixos;
   themes = (import ./sources/themes { inherit pkgs cfg; }).filteredThemes;
-  activeTheme = builtins.head (builtins.filter (theme: theme.name == cfg.activeTheme) themes);
-in
-{
-  imports = [
-    ./hm/mutable
-    ./packages
-    ./programs
-    ./sources
-  ];
+  activeTheme = builtins.head
+    (builtins.filter (theme: theme.name == cfg.activeTheme) themes);
+in {
+  imports = [ ./hm/mutable ./packages ./programs ./sources ];
 
   options.hydenix = {
     enable = mkEnableOption "hydenix";
@@ -37,7 +26,8 @@ in
     themes = mkOption {
       type = types.listOf types.str;
       default = [ "Catppuccin Mocha" ];
-      description = "List of theme names to install. The last one will be set as the current theme.";
+      description =
+        "List of theme names to install. The last one will be set as the current theme.";
     };
     activeTheme = mkOption {
       type = types.str;
@@ -57,10 +47,11 @@ in
 
     xdg.portal = {
       enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-hyprland
-        # xdg-desktop-portal-gtk
-      ];
+      extraPortals = with pkgs;
+        [
+          xdg-desktop-portal-hyprland
+          # xdg-desktop-portal-gtk
+        ];
       config.common.default = "*";
     };
 
@@ -84,27 +75,14 @@ in
       };
     };
 
-    services = {
-      blueman-applet.enable = true;
-    };
+    services = { blueman-applet.enable = true; };
 
     home.sessionVariables = import ./hm/home-env.nix { inherit lib; };
     home.packages = import ./hm/home-packages.nix { inherit lib pkgs themes; };
-    home.file = import ./hm/home-file.nix {
-      inherit
-        lib
-        pkgs
-        themes
-        userConfig
-        ;
-    };
+    home.file =
+      import ./hm/home-file.nix { inherit lib pkgs themes userConfig; };
     home.activation = import ./hm/home-activation.nix {
-      inherit
-        lib
-        pkgs
-        config
-        themes
-        ;
+      inherit lib pkgs config themes;
       activeTheme = cfg.activeTheme;
     };
 
@@ -152,8 +130,6 @@ in
       };
     };
 
-    nix = {
-      package = lib.mkForce pkgs.nix;
-    };
+    nix = { package = lib.mkForce pkgs.nix; };
   };
 }

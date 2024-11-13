@@ -1,5 +1,5 @@
 rec {
-  username = "razkaroth";
+  username = "raz";
   gitUser = "razkaroth";
   gitEmail = "rocker.ikaros@gmail.com";
   host = "Crystalix";

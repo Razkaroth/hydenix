@@ -1,5 +1,6 @@
 {
-  description = "Nix & home-manager configuration for HyDE, an Arch Linux based Hyprland desktop";
+  description =
+    "Nix & home-manager configuration for HyDE, an Arch Linux based Hyprland desktop";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -12,18 +13,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    nixarr.url = "github:rasmus-kirk/nixarr";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      nix-index-database,
-      ...
-    }@inputs:
+    { self, nixpkgs, home-manager, nixarr, nix-index-database, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -37,21 +34,14 @@
       userConfig = import ./config.nix;
 
       commonArgs = {
-        inherit
-          nixpkgs
-          pkgs
-          home-manager
-          system
-          userConfig
-          nix-index-database
-          ;
+        inherit nixpkgs pkgs home-manager system userConfig nix-index-database
+          nixarr;
       };
       arch-vm = import ./hosts/vm/arch-vm.nix { inherit pkgs userConfig; };
       fedora-vm = import ./hosts/vm/fedora-vm.nix { inherit pkgs userConfig; };
 
       devShell = import ./lib/dev-shell.nix { inherit commonArgs; };
-    in
-    {
+    in {
       nixosConfigurations = {
         hydenix = mkNixosHost commonArgs;
 
@@ -75,10 +65,8 @@
       homeManagerModules.default = {
         ${userConfig.username} = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [
-            ./hosts/nixos/home.nix
-            nix-index-database.hmModules.nix-index
-          ];
+          modules =
+            [ ./hosts/nixos/home.nix nix-index-database.hmModules.nix-index ];
           extraSpecialArgs = {
             inherit userConfig;
             inherit inputs;
@@ -93,16 +81,15 @@
           modules = [
             ./hosts/nixos/home.nix
             nix-index-database.hmModules.nix-index
-            {
-              targets.genericLinux.enable = true;
-            }
+            { targets.genericLinux.enable = true; }
           ];
           extraSpecialArgs = {
             inherit userConfig;
             inherit inputs;
           };
         };
-        activationPackage = self.homeConfigurations.${userConfig.username}.activationPackage;
+        activationPackage =
+          self.homeConfigurations.${userConfig.username}.activationPackage;
       };
 
       devShells.${system}.default = devShell;

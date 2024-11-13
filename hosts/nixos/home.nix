@@ -1,13 +1,8 @@
-{
-  userConfig,
-  ...
-}:
+{ userConfig, inputs, ... }:
 
 {
 
-  imports = [
-    ../../hydenix
-  ];
+  imports = [ ../../hydenix ];
 
   hydenix = {
     enable = userConfig.hyde.enable or true;
@@ -15,10 +10,7 @@
       userName = userConfig.gitUser or "";
       userEmail = userConfig.gitEmail or "";
     };
-    themes =
-      userConfig.hyde.themes or [
-        "Catppuccin Mocha"
-      ];
+    themes = userConfig.hyde.themes or [ "Catppuccin Mocha" ];
     activeTheme = userConfig.hyde.activeTheme or "Catppuccin Mocha";
   };
 

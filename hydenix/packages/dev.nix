@@ -24,6 +24,7 @@
     docker
     docker-compose
     jq
+    lazygit
     git-lfs
     postman
     insomnia

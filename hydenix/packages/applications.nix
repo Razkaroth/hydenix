@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,7 +7,6 @@
     brave # browser
     chromium # browser
     google-chrome # browser
-    inputs.zen-browser.packages."${system}".specific
     kitty # terminal
     libsForQt5.dolphin # kde file manager
     ark # kde file archiver
