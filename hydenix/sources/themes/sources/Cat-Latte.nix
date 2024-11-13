@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "Cat-Latte";
     name = name;
     rev = "Cat-Latte";
-    sha256 = "sha256-RQ2M4CUQr9xziYRWHLM1zvA9OGZRc0kvfQwv+n4LX5Q=";
+    sha256 = "sha256-giarUq0eQS8qLfnpGIKQ6pw6sqAcaYohnxC305OkPLc=";
   };
 
   meta = {

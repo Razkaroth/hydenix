@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "Oxo-Carbon";
     rev = "Oxo-Carbon";
     name = name;
-    sha256 = "sha256-qxqdP5rInvHy2Irm6pxlujhSPaVm+i4YoQ2/4dS4vhw=";
+    sha256 = "sha256-nftD2fu00xs0S7JKaoOoZGcgQINKbLHVwfkXV06L46Y=";
   };
   meta = {
     description = "HyDE Theme: Oxo Carbon";

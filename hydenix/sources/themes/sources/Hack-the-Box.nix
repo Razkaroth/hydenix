@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "hyde-gallery";
     rev = "Hack-the-Box";
     name = name;
-    sha256 = "sha256-ww7LoUVHlJhYUE2VSguhE7OZblx0hbQp6IaWAJSLcy4=";
+    sha256 = "sha256-KgRkKFEGukj8dPXDxN1JvLLZxDfmvePmm2Tx9xZq284=";
   };
 
   meta = {

@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "Paranoid-Sweet";
     rev = "Paranoid-Sweet";
     name = name;
-    sha256 = "sha256-0FhznHsg2ov4XYVvhY0y5Uy45s2nWMi8JZMQPBUvpPg=";
+    sha256 = "sha256-j4fjX2fWSBajNKFSovVsy+FydUcq5FEtk6B9iiDURAs=";
   };
 
   meta = {

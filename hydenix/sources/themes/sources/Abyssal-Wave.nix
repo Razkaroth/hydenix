@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "Abyssal-Wave";
     rev = "main";
     name = name;
-    sha256 = "sha256-VpKPKgRQMQhDWmlrFignZ1tN69MB/cd8KBsAARMIKIo=";
+    sha256 = "sha256-JMYjNV2r6/lRwKNQFdz2HmZH7ZxLO0MdiO2iUi5R7As=";
   };
 
   meta = {

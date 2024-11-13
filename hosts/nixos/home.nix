@@ -1,4 +1,4 @@
-{ userConfig, inputs, ... }:
+{ userConfig, ... }:
 
 {
 

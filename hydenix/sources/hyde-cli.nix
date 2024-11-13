@@ -125,6 +125,8 @@ let
 
         # make .hyde-cli.version file
         echo "HyDE CLI version 0.6.0" > $out/share/hyde/hyde-cli/.hyde-cli.ver
+        echo "HyDE CLI version 0.6.0" > $out/share/hyde-cli/.hyde-cli.ver
+
 
     '';
 

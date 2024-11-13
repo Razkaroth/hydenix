@@ -9,7 +9,8 @@ utils.mkTheme rec {
     repo = "hyde-gallery";
     rev = "Windows-11";
     name = name;
-    sha256 = "sha256-QG2pGDT6G9fuqiCErSf1cTOdRNI5WDy+1yyHGXDsYoQ=";
+    sha256 = "sha256-jgFrtIOOX47jPN4qgXAkHOjxFQGK3zep5MszEzG3ydg=";
+      
   };
 
   meta = {

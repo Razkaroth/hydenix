@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "Green-Lush";
     rev = "main";
     name = name;
-    sha256 = "sha256-Z0TdPlk5sPIAVZvoZeEbzs61XhTx5p6q9vm3hhhhY0o=";
+    sha256 = "sha256-4k3EXKyHkVPrqnZuviHpmSc+kNIVysZTGu0hd/XT+UA=";
   };
 
   meta = {

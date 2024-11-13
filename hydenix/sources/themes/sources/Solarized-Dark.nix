@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "Solarized-Dark";
     rev = "Solarized-Dark";
     name = name;
-    sha256 = "sha256-hZb94uJt5XuTJToL+ljQTXOBBKBCkrytD7jwV8Ck7ug=";
+    sha256 = "sha256-naLPzGyGK3jQSILdP5vkG2coEOqkQ4Q/dHUBJlUa2pI=";
   };
 
   meta = {

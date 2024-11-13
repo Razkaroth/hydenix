@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "hyde-gallery";
     name = name;
     rev = "Bad-Blood";
-    sha256 = "sha256-8BQukT9sXd89qiCelc9KitfXy7x9sgLChTGKzRpHUaA=";
+    sha256 = "sha256-VKq++NlPM5a2XqzlfMMUMgHSLLqfLgtsDSalKNrUMqg=";
   };
 
   meta = {

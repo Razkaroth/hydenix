@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "Monterey-Frost";
     rev = "main";
     name = name;
-    sha256 = "sha256-II0UBeqTK2TPeXvY4HuTsmqRkGMrjq5jSSVWvR/hm8M=";
+    sha256 = "sha256-ECG7wyIa0RdZteTEdQjpVjhbf62XXz0rW3Ea494461E=";
   };
 
   meta = {

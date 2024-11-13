@@ -9,7 +9,7 @@ utils.mkTheme rec {
     repo = "Rain-Dark";
     rev = "Rain-Dark";
     name = name;
-    sha256 = "sha256-1EXbRmCWrcY0NKD9iL+xGmm7ddqLFf4K7ibVSBm2Tuc=";
+    sha256 = "sha256-zv66a/fh3xqOIYVD6OUi4ZEpn3L29J2vvBnPBjeQW7w=";
   };
 
   meta = {
