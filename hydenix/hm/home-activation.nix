@@ -91,8 +91,4 @@ in
     $DRY_RUN_CMD $HOME/.local/share/bin/themeswitch.sh -s "${activeTheme}"
   '';
 
-  setMonitors = lib.hm.dag.entryAfter [ "setTheme" ] ''
-    echo "${monitorsConfig}" > $HOME/.config/hypr/monitors.conf"
-  '' ;
-
 }

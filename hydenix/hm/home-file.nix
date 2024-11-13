@@ -97,6 +97,15 @@ lib.mkMerge [
     };
   }
 
+  {
+    ".config/hypr/monitors.conf" = {
+      text = import ./hypr-configs/monitors.nix { inherit userConfig; };
+      force = true;
+      mutable = true;
+    };
+
+  }
+
   # --------------------------------------------------- // Theme generation
   (import ./gen-theme-homefiles.nix { inherit lib pkgs; } themes)
 
