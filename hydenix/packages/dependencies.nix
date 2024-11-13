@@ -1,8 +1,6 @@
 { pkgs, ... }:
-let
-  fonts = import ../sources/hyde-fonts.nix { inherit pkgs; };
-in
-{
+let fonts = import ../sources/hyde-fonts.nix { inherit pkgs; };
+in {
   home.packages = with pkgs; [
     # --------------------------------------------------- // Dependencies
     polkit_gnome # authentication agent
@@ -41,6 +39,7 @@ in
 
     home-manager # for home-manager
 
+    nix-output-monitor # for nix output monitoring
     # TODO: check these packages if they are even needed 
     xdg-utils # for xdg-open
   ];

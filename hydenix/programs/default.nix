@@ -1,11 +1,6 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
 
-  imports = [
-    ./git.nix
-    ./zsh.nix
-    ./vscode.nix
-  ];
+  imports = [ ./git.nix ./zsh.nix ./vscode.nix ./tmux.nix ];
 
   programs = {
     home-manager.enable = true;

@@ -1,15 +1,15 @@
 rec {
-  username = "hydenix";
-  gitUser = "hydenix";
-  gitEmail = "exampleEmail";
-  host = "hydenix";
-  /*
-    Default password is required for sudo support in systems
-    !REMEMBER TO USE passwd TO CHANGE THE PASSWORD!
+  username = "razkaroth";
+  gitUser = "razkaroth";
+  gitEmail = "rocker.ikaros@gmail.com";
+  host = "Crystalix";
+  /* Default password is required for sudo support in systems
+     !REMEMBER TO USE passwd TO CHANGE THE PASSWORD!
   */
   defaultPassword = "hydenix";
-  timezone = "America/Vancouver";
-  locale = "en_CA.UTF-8";
+  timezone = "America/Mexico_City";
+  locale = "en_US.UTF-8";
+  extraLocale = "es_MX.UTF-8";
 
   hyde = rec {
     sddmTheme = "Candy"; # or "Corners"
@@ -29,17 +29,17 @@ rec {
     themes = [
       # -- Default themes
       "Catppuccin Mocha"
-      # "Catppuccin Latte"
-      # "Decay Green"
-      # "Edge Runner"
-      # "Frosted Glass"
-      # "Graphite Mono"
-      # "Gruvbox Retro"
-      # "Material Sakura"
-      # "Nordic Blue"
-      # "Rose Pine"
-      # "Synth Wave"
-      # "Tokyo Night"
+      "Catppuccin Latte"
+      "Decay Green"
+      "Edge Runner"
+      "Frosted Glass"
+      "Graphite Mono"
+      "Gruvbox Retro"
+      "Material Sakura"
+      "Nordic Blue"
+      "Rose Pine"
+      "Synth Wave"
+      "Tokyo Night"
 
       # -- Themes from hyde-gallery (use with caution)
       # "Abyssal-Wave"

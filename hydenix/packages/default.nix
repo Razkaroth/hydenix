@@ -6,6 +6,7 @@
     ./dependencies.nix
     ./theming.nix
     ./applications.nix
+    ./dev.nix
     ./shell.nix
     ./gaming.nix
     ./music.nix

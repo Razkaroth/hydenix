@@ -1,19 +1,18 @@
-{
-  pkgs,
-  userConfig,
-  ...
-}:
+{ pkgs, userConfig, ... }:
 let
   sddm-candy = pkgs.callPackage ../../hydenix/sources/sddm-candy.nix { };
   sddm-corners = pkgs.callPackage ../../hydenix/sources/sddm-corners.nix { };
-  Bibata-Modern-Ice =
-    (import ../../hydenix/sources/themes/utils/arcStore.nix { inherit pkgs; })
-    .cursor."Bibata-Modern-Ice";
-in
-{
+  Bibata-Modern-Ice = (import ../../hydenix/sources/themes/utils/arcStore.nix {
+    inherit pkgs;
+  }).cursor."Bibata-Modern-Ice";
+in {
 
   imports = [
     ./hardware-configuration.nix
+    ./laptop.nix
+    ./nixarr.nix
+    ./nvim.nix
+    ./kanata
   ];
 
   # ===== Boot Configuration =====
@@ -21,22 +20,22 @@ in
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # disable if switching to grub
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   #! Enable grub below, note you will have to change to the new bios boot option for settings to apply
-  # boot = {
-  #   loader = {
-  #     efi = {
-  #       canTouchEfiVariables = true;
-  #       efiSysMountPoint = "/boot/efi";
-  #     };
-  #     grub = {
-  #       enable = true;
-  #       devices = [ "nodev" ];
-  #       efiSupport = true;
-  #       useOSProber = true;
-  #     };
-  #   };
-  # };
+  boot = {
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+      grub = {
+        enable = true;
+        devices = [ "nodev" ];
+        efiSupport = true;
+        useOSProber = true;
+      };
+    };
+  };
 
   environment.pathsToLink = [
     "/share/icons"
@@ -67,10 +66,26 @@ in
   # USER EDITABLE ADD FILESYSTEMS HERE
 
   # # # ===== Security =====
-  # security = {
-  #   polkit.enable = true;
-  #   pam.services.swaylock = { };
-  # };
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+    pam.services.swaylock = { };
+  };
+
+  security.pam.loginLimits = [
+    {
+      domain = "@audio";
+      item = "memlock";
+      type = "-";
+      value = "unlimited";
+    }
+    {
+      domain = "@audio";
+      item = "rtprio";
+      type = "-";
+      value = "99";
+    }
+  ];
 
   # ===== System Services =====
   services = {
@@ -82,6 +97,7 @@ in
         enable = true;
         support32Bit = true;
       };
+      jack.enable = true;
       pulse.enable = true;
       wireplumber.enable = true;
     };
@@ -121,6 +137,7 @@ in
       };
       sessionPackages = [ pkgs.hyprland ];
     };
+    tailscale.enable = true;
     upower.enable = true;
   };
 
@@ -134,6 +151,12 @@ in
     libsForQt5.qt5.qtgraphicaleffects # for sddm theme effects
     libsForQt5.qtsvg # for sddm theme svg icons
     libsForQt5.qt5.qtwayland # wayland support for qt5
+
+    # Audio
+    helvum
+    easyeffects
+    qjackctl
+    rtaudio
   ];
 
   networking = {
@@ -157,13 +180,41 @@ in
   time.timeZone = userConfig.timezone;
   i18n.defaultLocale = userConfig.locale;
 
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = userConfig.extraLocale;
+    LC_IDENTIFICATION = userConfig.extraLocale;
+    LC_MEASUREMENT = userConfig.extraLocale;
+    LC_MONETARY = userConfig.extraLocale;
+    LC_NAME = userConfig.extraLocale;
+    LC_NUMERIC = userConfig.extraLocale;
+    LC_PAPER = userConfig.extraLocale;
+    LC_TELEPHONE = userConfig.extraLocale;
+    LC_TIME = userConfig.extraLocale;
+  };
+
+  # ===== Virtualization Configuration =====
+
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   # ===== User Configuration =====
   users.users.${userConfig.username} = {
     isNormalUser = true;
     extraGroups = [
-      "wheel"
       "networkmanager"
+      "wheel"
+      "media"
       "video"
+      "input"
+      "uinput"
+      "libvirtd"
+      "plugdev"
     ];
     initialPassword = userConfig.defaultPassword;
   };
@@ -171,18 +222,19 @@ in
 
   # ===== Nix Configuration =====
   nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than +5";
+    };
     settings = {
       auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      experimental-features = [ "nix-command" "flakes" ];
       substituters = [ "https://cache.nixos.org" ];
-      trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
-      extra-substituters = [
-        "https://hyprland.cachix.org"
-        "https://nix-community.cachix.org"
-      ];
+      trusted-public-keys =
+        [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
+      extra-substituters =
+        [ "https://hyprland.cachix.org" "https://nix-community.cachix.org" ];
       extra-trusted-public-keys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
