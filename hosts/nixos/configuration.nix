@@ -1,4 +1,9 @@
-{ pkgs, userConfig, ... }:
+{
+pkgs, 
+userConfig, 
+# zen-browser, 
+... 
+}:
 let
   sddm-candy = pkgs.callPackage ../../hydenix/sources/sddm-candy.nix { };
   sddm-corners = pkgs.callPackage ../../hydenix/sources/sddm-corners.nix { };
@@ -19,6 +24,7 @@ in {
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  nixpkgs.config.allowUnfree = true; 
   # disable if switching to grub
   # boot.loader.systemd-boot.enable = true;
   #! Enable grub below, note you will have to change to the new bios boot option for settings to apply
@@ -157,6 +163,10 @@ in {
     easyeffects
     qjackctl
     rtaudio
+    bash
+    alsa-lib
+    # browser
+    # zen-browser.packages."${system}".default
   ];
 
   networking = {

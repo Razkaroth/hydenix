@@ -103,8 +103,8 @@ lib.mkMerge [
 
   # --------------------------------------------------- // Hypr configurations
   ( lib.mkAfter {
-    ".config/hypr/monitors.conf" = {
-      text = import ./hypr-configs/monitors.nix { inherit userConfig; };
+    ".config/hypr/monitorsRaz.conf" = {
+      text = builtins.readFile ./hypr-configs/monitors.conf;
       force = true;
       mutable = true;
     };

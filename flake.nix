@@ -17,10 +17,15 @@
     nixarr.url = "github:rasmus-kirk/nixarr";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { self, nixpkgs, home-manager, nixarr, nix-index-database, ... }@inputs:
+    { self, nixpkgs, home-manager,  nix-index-database, zen-browser, nixarr, spicetify-nix, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -34,8 +39,7 @@
       userConfig = import ./config.nix;
 
       commonArgs = {
-        inherit nixpkgs pkgs home-manager system userConfig nix-index-database
-          nixarr;
+        inherit nixpkgs pkgs home-manager system userConfig nix-index-database zen-browser nixarr spicetify-nix;
       };
       arch-vm = import ./hosts/vm/arch-vm.nix { inherit pkgs userConfig; };
       fedora-vm = import ./hosts/vm/fedora-vm.nix { inherit pkgs userConfig; };

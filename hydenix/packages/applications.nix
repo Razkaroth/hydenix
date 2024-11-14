@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, zen-browser, ... }:
 
 {
   home.packages = with pkgs; [
@@ -12,6 +12,7 @@
     ark # kde file archiver
     vim # terminal text editor
     vscode # ide text editor
+    zen-browser.packages."${system}".default
 
     pomodoro
     sunvox

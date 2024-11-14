@@ -22,6 +22,8 @@
       alias ld='eza -lhD --icons=auto' # long list dirs
       alias lt='eza --icons=auto --tree' # list folder as tree
       alias vc='code' # gui code editor
+      alias n='nvim'
+
 
       # Directory navigation shortcuts
       alias ..='cd ..'
