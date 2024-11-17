@@ -40,7 +40,7 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
-    neovim-custom
+    neovim
 
     # Can't install this with the rest of the python packages b/c this needs to be in path
     python3Packages.jupytext # if you want to use vim-jupytext or similar

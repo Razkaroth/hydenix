@@ -1,11 +1,5 @@
-{
-  nixpkgs,
-  home-manager,
-  system,
-  pkgs,
-  userConfig,
-  nix-index-database,
-}:
+{ nixpkgs, home-manager, system, pkgs, userConfig, nix-index-database
+, zen-browser, nixarr, }:
 
 nixpkgs.lib.nixosSystem {
   inherit system;
@@ -14,22 +8,16 @@ nixpkgs.lib.nixosSystem {
     inherit userConfig;
   };
   modules = [
+    nixarr.nixosModules.default
     ./configuration.nix
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.${userConfig.username} =
-        { pkgs, ... }:
-        {
-          imports = [
-            ./home.nix
-            nix-index-database.hmModules.nix-index
-          ];
-        };
-      home-manager.extraSpecialArgs = {
-        inherit userConfig;
+      home-manager.users.${userConfig.username} = { pkgs, ... }: {
+        imports = [ ./home.nix nix-index-database.hmModules.nix-index ];
       };
+      home-manager.extraSpecialArgs = { inherit userConfig zen-browser; };
     }
   ];
 }
