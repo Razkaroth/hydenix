@@ -8,6 +8,7 @@
     kubectl
     lens
     kubernetes-helm
+
     #Cloud
     doctl
 
@@ -25,6 +26,8 @@
     #docker-compose
     jq
     git-lfs
+    lazygit
+    github-cli
     postman
     insomnia
     speedtest-cli

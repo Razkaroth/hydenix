@@ -96,6 +96,7 @@ in
         pkgs
         themes
         userConfig
+	activeTheme
         ;
     };
     home.activation = import ./hm/home-activation.nix {

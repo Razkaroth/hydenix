@@ -3,6 +3,7 @@
   pkgs,
   themes,
   userConfig,
+  activeTheme,
 }:
 let
   hyde = import ../sources/hyde.nix { inherit pkgs; };
@@ -17,18 +18,189 @@ lib.mkMerge [
 
   # --------------------------------------------------- // Hyde configurations
   {
-    ".config" = {
-      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config";
+    ".config/Code - OSS/User" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/Code - OSS/User";
       force = true;
       recursive = true;
       mutable = true;
     };
-    ".local/share" = {
-      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.local/share";
+    ".config/Code/User" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/Code/User";
       force = true;
       recursive = true;
       mutable = true;
     };
+    ".config/Kvantum" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/Kvantum";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/MangoHud" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/MangoHud";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/dunst" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/dunst";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/fastfetch" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/fastfetch";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/fish" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/fish";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/gtk-3.0" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/gtk-3.0";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/hyde" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/hyde";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/hypr" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/hypr";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/kitty" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/kitty";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/lsd" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/lsd";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/menus" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/menus";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/nwg-look" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/nwg-look";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/qt5ct" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/qt5ct";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/qt6ct" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/qt6ct";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/rofi" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/rofi";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/swaylock" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/swaylock";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/waybar" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/waybar";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/wlogout" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/wlogout";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".config/xsettingsd" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/xsettingsd";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+
+    ".config/baloofilerc" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/baloofilerc";
+      force = true;
+      mutable = true;
+    };
+    ".config/code-flags.conf" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/code-flags.conf";
+      force = true;
+      mutable = true;
+    };
+    ".config/dolphinrc" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/dolphinrc";
+      force = true;
+      mutable = true;
+    };
+    ".config/kdeglobals" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/kdeglobals";
+      force = true;
+      mutable = true;
+    };
+    ".config/libinput-gestures.conf" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/libinput-gestures.conf";
+      force = true;
+      mutable = true;
+    };
+    ".config/spotify-flags.conf" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.config/spotify-flags.conf";
+      force = true;
+      mutable = true;
+    };
+
+    ".local/share/bin" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.local/share/bin";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".local/share/dolphin" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.local/share/dolphin";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".local/share/kio/servicemenus" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.local/share/kio/servicemenus";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+    ".local/share/kxmlgui5/dolphin" = {
+      source = "${hyde}/share/hyde/hyprdots-modified/Configs/.local/share/kxmlgui5/dolphin";
+      force = true;
+      recursive = true;
+      mutable = true;
+    };
+
     ".icons/default" = {
       source = "${hyde}/share/hyde/hyprdots-modified/Configs/.icons/default";
       force = true;
@@ -99,5 +271,8 @@ lib.mkMerge [
 
   # --------------------------------------------------- // Theme generation
   (import ./gen-theme-homefiles.nix { inherit lib pkgs; } themes)
+
+  # --------------------------------------------------- // Theme activation
+  (import ./gen-theme-activation.nix { inherit lib pkgs activeTheme; })
 
 ]
