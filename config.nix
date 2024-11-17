@@ -1,15 +1,16 @@
 rec {
-  username = "hydenix";
-  gitUser = "hydenix";
-  gitEmail = "exampleEmail";
-  host = "hydenix";
-  /*
-    Default password is required for sudo support in systems
-    !REMEMBER TO USE passwd TO CHANGE THE PASSWORD!
+  username = "razkaroth";
+  gitUser = "razkaroth";
+  gitEmail = "rocker.ikaros@gmail.com";
+  host = "solitude";
+  /* Default password is required for sudo support in systems
+     !REMEMBER TO USE passwd TO CHANGE THE PASSWORD!
   */
+
   defaultPassword = "hydenix";
-  timezone = "America/Vancouver";
-  locale = "en_CA.UTF-8";
+  timezone = "America/Mexico_City";
+  locale = "en_US.UTF-8";
+  extraLocale = "es_MX.UTF-8";
 
   hyde = rec {
     sddmTheme = "Candy"; # or "Corners"
