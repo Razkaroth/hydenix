@@ -15,6 +15,7 @@ nixpkgs.lib.nixosSystem {
   };
   modules = [
     ./configuration.nix
+    ./kanata
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;

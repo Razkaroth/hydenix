@@ -24,23 +24,23 @@ rec {
     };
 
     # active theme, must be in themes list
-    activeTheme = "Catppuccin Mocha";
+    activeTheme = "Monokai";
 
     # list of themes to choose from
     themes = [
       # -- Default themes
       "Catppuccin Mocha"
-      # "Catppuccin Latte"
-      # "Decay Green"
-      # "Edge Runner"
-      # "Frosted Glass"
-      # "Graphite Mono"
-      # "Gruvbox Retro"
+       "Catppuccin Latte"
+       "Decay Green"
+       "Edge Runner"
+       "Frosted Glass"
+       "Graphite Mono"
+       "Gruvbox Retro"
       # "Material Sakura"
-      # "Nordic Blue"
-      # "Rose Pine"
-      # "Synth Wave"
-      # "Tokyo Night"
+       "Nordic Blue"
+       "Rose Pine"
+       "Synth Wave"
+       "Tokyo Night"
 
       # -- Themes from hyde-gallery (use with caution)
       # "Abyssal-Wave"
@@ -50,11 +50,11 @@ rec {
       # "Dracula"
       # "Edge Runner"
       # "Green Lush"
-      # "Greenify"
+       "Greenify"
       # "Hack the Box"
       # "Ice Age"
       # "Mac OS"
-      # "Monokai"
+       "Monokai"
       # "One Dark"
       # "Oxo Carbon"
       # "Paranoid Sweet"
