@@ -35,6 +35,7 @@
 
 let
   hyde-cli = import ../sources/hyde-cli.nix { inherit pkgs lib; };
+  monitorsConf = builtins.readFile ./configs/monitors.conf;
 in
 
 {
@@ -88,6 +89,10 @@ in
       ]
     }:$PATH"
     $DRY_RUN_CMD $HOME/.local/share/bin/themeswitch.sh -s "${activeTheme}"
+  '';
+
+  hyprOverrides = lib.hm.dag.entryAfter [ "setTheme" ] ''
+    $DRY_RUN_CMD echo "${monitorsConf}" > $HOME/.config/hypr/monitors.conf
   '';
 
 }

@@ -275,4 +275,12 @@ lib.mkMerge [
   # --------------------------------------------------- // Theme activation
   (import ./gen-theme-activation.nix { inherit lib pkgs activeTheme; })
 
+  # --------------------------------------------------- // Overrides
+  # {
+  #   ".config/hypr/monitorsRaz" = {
+  #     text = import ./hyde-conf.nix { inherit userConfig; };
+  #     force = true;
+  #     mutable = true;
+  #   };
+  # }
 ]
