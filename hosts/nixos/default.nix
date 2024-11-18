@@ -5,6 +5,8 @@
   pkgs,
   userConfig,
   nix-index-database,
+  zen-browser,
+  nixarr
 }:
 
 nixpkgs.lib.nixosSystem {
@@ -17,6 +19,7 @@ nixpkgs.lib.nixosSystem {
     ./configuration.nix
     ./kanata
     ./docker.nix
+    nixarr.nixosModules.default
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
@@ -30,7 +33,7 @@ nixpkgs.lib.nixosSystem {
           ];
         };
       home-manager.extraSpecialArgs = {
-        inherit userConfig;
+        inherit userConfig zen-browser;
       };
     }
   ];

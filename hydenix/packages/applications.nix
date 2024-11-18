@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, zen-browser, ... }:
 
 {
   home.packages = with pkgs; [
     # --------------------------------------------------- // Applications
     firefox # browser
+    zen-browser.packages."${system}".default
     brave # browser
     betterbird
     chromium # browser

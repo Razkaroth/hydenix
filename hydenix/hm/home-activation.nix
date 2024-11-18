@@ -36,6 +36,7 @@
 let
   hyde-cli = import ../sources/hyde-cli.nix { inherit pkgs lib; };
   monitorsConf = builtins.readFile ./configs/monitors.conf;
+  userPrefs = builtins.readFile ./configs/userprefs.conf;
 in
 
 {
@@ -93,6 +94,7 @@ in
 
   hyprOverrides = lib.hm.dag.entryAfter [ "setTheme" ] ''
     $DRY_RUN_CMD echo "${monitorsConf}" > $HOME/.config/hypr/monitors.conf
+    $DRY_RUN_CMD echo "${userPrefs}" > $HOME/.config/hypr/userprefs.conf
   '';
 
   audioEffects = lib.hm.dag.entryAfter [ "hyprOverrides" ] ''
