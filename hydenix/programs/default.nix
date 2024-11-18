@@ -5,6 +5,7 @@
     ./git.nix
     ./zsh.nix
     ./vscode.nix
+    ./tmux.nix
   ];
 
   programs = {
