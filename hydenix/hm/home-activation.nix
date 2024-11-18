@@ -95,4 +95,8 @@ in
     $DRY_RUN_CMD echo "${monitorsConf}" > $HOME/.config/hypr/monitors.conf
   '';
 
+  audioEffects = lib.hm.dag.entryAfter [ "hyprOverrides" ] ''
+   $DRY_RUN_CMD nohup easyeffects --gapplication-service &
+  '';
+
 }

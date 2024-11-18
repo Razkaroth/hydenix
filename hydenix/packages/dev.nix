@@ -16,14 +16,14 @@
 
     aria2
     bat
+    btop
     anydesk
     fd
     ripgrep
     fzf
     socat
     ffmpeg
-    #docker
-    #docker-compose
+    docker-compose
     jq
     git-lfs
     lazygit
@@ -32,11 +32,13 @@
     insomnia
     speedtest-cli
     zoxide
+    uutils-coreutils-noprefix
 
     #DB
     sqlite
     sqlitebrowser
     mongodb-compass
+
 
     # langs
     nodejs
