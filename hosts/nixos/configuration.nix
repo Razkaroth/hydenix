@@ -166,7 +166,17 @@ in {
   # ===== User Configuration =====
   users.users.${userConfig.username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+    extraGroups = [ 
+      "networkmanager"
+      "wheel"
+      "media"
+      "video"
+      "input"
+      "uinput"
+      "libvirtd"
+      "plugdev"
+      "docker"
+ ];
     initialPassword = userConfig.defaultPassword;
   };
   users.defaultUserShell = pkgs.zsh;
