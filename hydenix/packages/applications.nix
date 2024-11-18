@@ -5,6 +5,7 @@
     # --------------------------------------------------- // Applications
     firefox # browser
     brave # browser
+    betterbird
     chromium # browser
     google-chrome # browser
     kitty # terminal
@@ -19,6 +20,7 @@
     sunvox
     obsidian
     obs-studio
+    thunderbird-bin
     typora
     transmission_4-gtk
     libreoffice

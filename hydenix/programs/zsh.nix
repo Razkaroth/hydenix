@@ -42,8 +42,15 @@
 
       export PATH=$HOME/.local/bin:$PATH
       eval "$(zoxide init zsh)"
+
+
     '';
     initExtraFirst = ''
+
+      if [ -z "$TMUX" ]; then
+          tmux new-session -A -s scratch
+      fi
+
       #Display Pokemonks
       pokemon-colorscripts --no-title -r 1-3
       # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
