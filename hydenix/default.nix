@@ -113,16 +113,16 @@ in
       enable = true;
       defaultApplications = {
         # Web
-        "text/html" = [ "firefox.desktop" ];
-        "x-scheme-handler/http" = [ "firefox.desktop" ];
-        "x-scheme-handler/https" = [ "firefox.desktop" ];
-        "x-scheme-handler/chrome" = [ "firefox.desktop" ];
-        "application/x-extension-htm" = [ "firefox.desktop" ];
-        "application/x-extension-html" = [ "firefox.desktop" ];
-        "application/x-extension-shtml" = [ "firefox.desktop" ];
-        "application/xhtml+xml" = [ "firefox.desktop" ];
-        "application/x-extension-xhtml" = [ "firefox.desktop" ];
-        "application/x-extension-xht" = [ "firefox.desktop" ];
+        "text/html" = [ "zen" ];
+        "x-scheme-handler/http" = [ "zen.desktop" ];
+        "x-scheme-handler/https" = [ "zen.desktop" ];
+        "x-scheme-handler/chrome" = [ "zen.desktop" ];
+        "application/x-extension-htm" = [ "zen.desktop" ];
+        "application/x-extension-html" = [ "zen.desktop" ];
+        "application/x-extension-shtml" = [ "zen.desktop" ];
+        "application/xhtml+xml" = [ "zen.desktop" ];
+        "application/x-extension-xhtml" = [ "zen.desktop" ];
+        "application/x-extension-xht" = [ "zen.desktop" ];
 
         # File manager
         "inode/directory" = [ "org.kde.dolphin.desktop" ];

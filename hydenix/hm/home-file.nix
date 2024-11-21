@@ -267,6 +267,12 @@ lib.mkMerge [
       force = true;
       mutable = true;
     };
+
+    ".config/hypr/scripts/rofiBeats.sh" = {
+        text = builtins.readFile ./scripts/rofiBeats.sh;
+        force = true;
+        mutable = true;
+      };
   }
 
   # --------------------------------------------------- // Theme generation
