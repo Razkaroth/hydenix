@@ -31,6 +31,7 @@
     postman
     insomnia
     speedtest-cli
+    stripe-cli
     zoxide
     uutils-coreutils-noprefix
 

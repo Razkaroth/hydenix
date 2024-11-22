@@ -24,7 +24,7 @@ rec {
     };
 
     # active theme, must be in themes list
-    activeTheme = "Monokai";
+    activeTheme = "Greenify";
 
     # list of themes to choose from
     themes = [

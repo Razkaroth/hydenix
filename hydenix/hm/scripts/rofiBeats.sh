@@ -15,15 +15,14 @@ declare -A online_music=(
   ["FM - Easy Rock 96.3 📻🎶"]="https://radio-stations-philippines.com/easy-rock"
   ["FM - Love Radio 90.7 📻🎶"]="https://radio-stations-philippines.com/love"
   ["FM - WRock - CEBU 96.3 📻🎶"]="https://onlineradio.ph/126-96-3-wrock.html"
-  ["FM - Fresh Philippines 📻🎶"]="https://onlineradio.ph/553-fresh-fm.html"
   ["YT - Wish 107.5 YT Pinoy HipHop 📻🎶"]="https://youtube.com/playlist?list=PLkrzfEDjeYJnmgMYwCKid4XIFqUKBVWEs&si=vahW_noh4UDJ5d37"
-  ["YT - Top Youtube Music 2023 📹🎶"]="https://youtube.com/playlist?list=PLDIoUOhQQPlXr63I_vwF9GD8sAKh77dWU&si=y7qNeEVFNgA-XxKy"
-  ["YT - Wish 107.5 YT Wishclusives 📹🎶"]="https://youtube.com/playlist?list=PLkrzfEDjeYJn5B22H9HOWP3Kxxs-DkPSM&si=d_Ld2OKhGvpH48WO"
   ["YT - Relaxing Music 📹🎶"]="https://youtube.com/playlist?list=PLMIbmfP_9vb8BCxRoraJpoo4q1yMFg4CE"
-  ["YT - Youtube Remix 📹🎶"]="https://youtube.com/playlist?list=PLeqTkIUlrZXlSNn3tcXAa-zbo95j0iN-0"
-  ["YT - Korean Drama OST 📹🎶"]="https://youtube.com/playlist?list=PLUge_o9AIFp4HuA-A3e3ZqENh63LuRRlQ"
-  ["YT - AfroBeatz 2024 📹🎶"]="https://www.youtube.com/watch?v=7uB-Eh9XVZQ"
   ["YT - Relaxing Piano Jazz Music 🎹🎶"]="https://youtu.be/85UEqRat6E4?si=jXQL1Yp2VP_G6NSn"
+  ["YT - CowbowBebop Lofi 🎹🎶"]="https://www.youtube.com/watch?v=xLgeRvykv1g&list=LL&index=2&pp=gAQBiAQB"
+  ["YT - Souls Lofi - Prepare to chill 🔥⚔️🎶"]="https://www.youtube.com/playlist?list=PLK8il0yNGJfO4rSYm74ONTzg-usRynwUG"
+  ["YT - Breathe in the ruins, Squire 🏰⚔️🎶"]="https://www.youtube.com/watch?v=Cs2BaMO7KnI"
+  ["YT - Scholastum Provost 📖⚔️🎶"]="https://www.youtube.com/playlist?list=PLQsgB3CetZVZh1QEvnfdc59XNDx19YHlL"
+
 )
 
 # Populate local_music array with files from music directory and subdirectories

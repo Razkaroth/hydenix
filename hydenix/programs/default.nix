@@ -6,6 +6,7 @@
     ./zsh.nix
     ./vscode.nix
     ./tmux.nix
+    ./pass.nix
   ];
 
   programs = {

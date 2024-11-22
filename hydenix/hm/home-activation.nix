@@ -95,10 +95,13 @@ in
   hyprOverrides = lib.hm.dag.entryAfter [ "setTheme" ] ''
     $DRY_RUN_CMD echo "${monitorsConf}" > $HOME/.config/hypr/monitors.conf
     $DRY_RUN_CMD echo "${userPrefs}" > $HOME/.config/hypr/userprefs.conf
+
+   $DRY_RUN_CMD chmod u+rxw  $HOME/.config/hypr/scripts/rofiBeats.sh
   '';
 
   audioEffects = lib.hm.dag.entryAfter [ "hyprOverrides" ] ''
    $DRY_RUN_CMD nohup easyeffects --gapplication-service &
+  
   '';
 
 }
