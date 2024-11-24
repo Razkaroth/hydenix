@@ -20,6 +20,7 @@ nixpkgs.lib.nixosSystem {
     ./kanata
     ./docker.nix
     nixarr.nixosModules.default
+    ./nixarr.nix
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;

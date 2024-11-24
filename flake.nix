@@ -26,7 +26,7 @@
       home-manager,
       nix-index-database,
       zen-browser,
-    nixarr,
+      nixarr,
       ...
     }@inputs:
     let
