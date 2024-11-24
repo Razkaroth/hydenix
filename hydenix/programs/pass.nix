@@ -23,5 +23,8 @@ in {
 
   home.packages = with pkgs; [
     tessen
+    rofi-pass-wayland
+    qrencode
+    wtype
   ];
 }
