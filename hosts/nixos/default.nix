@@ -19,6 +19,7 @@ nixpkgs.lib.nixosSystem {
     ./configuration.nix
     ./kanata
     ./docker.nix
+    ./tailscale.nix
     nixarr.nixosModules.default
     ./nixarr.nix
     home-manager.nixosModules.home-manager

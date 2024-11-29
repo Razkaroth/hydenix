@@ -19,7 +19,7 @@
       # These options set up a nginx HTTPS reverse proxy, so you can access
       # Jellyfin on your domain with HTTPS
       expose.https = {
-        enable = false;
+        enable = true;
         domainName = "raz.com";
         acmeMail = "mail@razkaroth.com"; # Required for ACME-bot
       };

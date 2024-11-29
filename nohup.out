@@ -1,0 +1,25 @@
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.360: 	pipe_manager.cpp:1511	Remote error res: No such file or directory
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.361: 	pipe_manager.cpp:1512	Remote error message: unknown resource 138 op:2
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.361: 	pipe_manager.cpp:1511	Remote error res: No such file or directory
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.361: 	pipe_manager.cpp:1512	Remote error message: unknown resource 138 op:2
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.361: 	pipe_manager.cpp:1511	Remote error res: No such file or directory
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.361: 	pipe_manager.cpp:1512	Remote error message: unknown resource 138 op:2
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.404: 	pipe_manager.cpp:1511	Remote error res: No such file or directory
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.404: 	pipe_manager.cpp:1512	Remote error message: unknown resource 138 op:2
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.404: 	pipe_manager.cpp:1511	Remote error res: No such file or directory
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.404: 	pipe_manager.cpp:1512	Remote error message: unknown resource 138 op:2
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.404: 	pipe_manager.cpp:1511	Remote error res: No such file or directory
+
+(easyeffects:1156098): easyeffects-WARNING **: 14:02:34.404: 	pipe_manager.cpp:1512	Remote error message: unknown resource 138 op:2
+Gdk-Message: 16:07:52.604: Error reading events from display: Broken pipe

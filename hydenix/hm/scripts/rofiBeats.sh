@@ -22,6 +22,9 @@ declare -A online_music=(
   ["YT - Souls Lofi - Prepare to chill 🔥⚔️🎶"]="https://www.youtube.com/playlist?list=PLK8il0yNGJfO4rSYm74ONTzg-usRynwUG"
   ["YT - Breathe in the ruins, Squire 🏰⚔️🎶"]="https://www.youtube.com/watch?v=Cs2BaMO7KnI"
   ["YT - Scholastum Provost 📖⚔️🎶"]="https://www.youtube.com/playlist?list=PLQsgB3CetZVZh1QEvnfdc59XNDx19YHlL"
+  ["YT - Zelda Chillhop 🏰⚔️🎶"]="https://www.youtube.com/playlist?list=PLQsgB3CetZVZh1QEvnfdc59XNDx19YHlL"
+  ["YT - Undertale Lofi 🏰⚔️🎶"]="https://www.youtube.com/playlist?list=PLb5uvAYH2QqAv4rbY7E5GaIdidZ_dNggt"
+  ["YT - Nier 🏰⚔️🎶"]="https://www.youtube.com/playlist?list=PLIzhSrfqD8bgCsPuQeu_-V681TnuRLaar"
 
 )
 
