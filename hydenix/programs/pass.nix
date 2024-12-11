@@ -22,6 +22,7 @@ in {
   };
 
   home.packages = with pkgs; [
+    keeweb
     tessen
     rofi-pass-wayland
     qrencode
