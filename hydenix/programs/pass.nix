@@ -12,6 +12,7 @@ in {
         pass-otp
         pass-import
         pass-audit
+        pass-file
       ]);
     settings.PASSWORD_STORE_DIR = storePath;
   };
